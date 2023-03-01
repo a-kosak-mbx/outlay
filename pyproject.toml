@@ -8,8 +8,22 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.1.6"
-
+flake8 = "^6.0.0"
+pyproject-flake8 = "^6.0.0.post1"
+flake8-import-order = "^0.18.2"
+flake8-docstrings = "^1.7.0"
+flake8-builtins = "^2.1.0"
+flake8-quotes = "^3.3.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+    max-line-length = 120
+    extend-ignore = ["D100", "D101", "D102", "D103", "D104"]
+    per-file-ignores = """
+        ./historian/tests.py: E712
+        ./historian/migrations/*: I100
+        ./manage.py: Q000
+    """

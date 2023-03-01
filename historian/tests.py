@@ -32,7 +32,7 @@ class TagListViewTest(TestCase):
         for author_id in range(number_of_tags):
             Tag.objects.create(
                 name=f'tag{author_id}',
-                description=f'some description text',
+                description='some description text',
                 color=0xf00ff0
             )
 
