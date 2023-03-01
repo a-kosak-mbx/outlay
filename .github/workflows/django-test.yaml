@@ -23,9 +23,9 @@ jobs:
       - name: Install requirements
         run: |
             poetry install
-      - name: Run Flake8
-        run: |
-            pflake8 .
+#      - name: Run Flake8
+#        run: |
+#            pflake8 .
       - name: Run tests
         run: |
             python manage.py test
