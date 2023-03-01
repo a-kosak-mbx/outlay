@@ -23,7 +23,8 @@ jobs:
       - name: Install requirements
         run: |
             poetry install
-            poetry shell
+            poetry export -f requirements.txt --output requirements.txt
+            pip install -r requirements.txt
       - name: Run Flake8
         run: |
             pflake8 .
